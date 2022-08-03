@@ -20,6 +20,7 @@ mod tests {
             ("one two three", 17, "one   two   three"),
             ("one two three", 18, "one    two   three"),
             ("one two three four", 18, "one two three four"),
+            ("one two three four", 6, "one   \ntwo   \nthree \nfour  "),
             ("Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", 12,
                 "Lorem  ipsum\ndolor    sit\namet        \nconsectetur \nadipiscing  \nelit  sed do\neiusmod     \ntempor      \nincididunt  \nut labore et\ndolore magna\naliqua      "),
             ("Mary and Samantha arrived at the bus station early but waited until noon for the bus", 10,
@@ -108,7 +109,7 @@ fn process_chunk(words: &Vec<String>, line_width: u32, chars_count: u32) -> Stri
                 }
             }
         }
-        
+
     }
 
     chunk
